@@ -16,6 +16,11 @@ public class Omr
     }
     public void readPixels() throws Exception
     {
-        int a=img.getRGB(133,200);
+        int a=img.getRGB(0,0);
+        Color col = new Color(a);
+        System.out.println(col.getRed());
+        System.out.println(col.getGreen());
+        System.out.println(col.getBlue());
+        System.out.println(col.getAlpha());
     }
 }
