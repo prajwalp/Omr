@@ -5,17 +5,27 @@ import java.awt.image.*;
 import javax.imageio.*;
 public class Omr
 {
-    BufferedImage img;
-    File file;
+    
     public void omr() throws Exception
     {
-        file = new File("a.jpg");
-        img = ImageIO.read(file);
+        File file = new File("a.jpg");
+        BufferedImage img=ImageIO.read(file);
         int a = img.getHeight();
         int b = img.getWidth();
+        System.out.println(a+"   "+b);
     }
     public void readPixels() throws Exception
     {
-        int a=img.getRGB(133,200);
+        File file = new File("a.jpg");
+        BufferedImage img=ImageIO.read(file);
+        int[] a = img.getRGB(0,0,133,200,null,0,133); 
+
+        Color c = new Color(a[100]);
+
+        System.out.println(c.getRed());   
+        System.out.println(c.getGreen()); 
+        System.out.println(c.getBlue());  
+        System.out.println(c.getAlpha());
+        
     }
 }
